@@ -1,0 +1,3 @@
+div
+    todo-form(new-todo='$ctrl.newTodo', on-add='$ctrl.addTodo($event);')
+    todo-list(todos='$ctrl.todos', on-complete='$ctrl.completeTodo($event);', on-delete='$ctrl.removeTodo($event);')

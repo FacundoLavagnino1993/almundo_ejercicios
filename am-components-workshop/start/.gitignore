@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+# Dependency directories
+node_modules
+src/vendor
+# Optional npm cache directory
+.npm
+
+#IDEs
+.idea
+
+build
+src/app/**/*.html
