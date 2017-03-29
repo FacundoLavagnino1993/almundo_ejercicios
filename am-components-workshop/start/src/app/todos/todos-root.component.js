@@ -23,7 +23,7 @@
 
         this.addTodo = function ($event) {
             var label = $event.label;
-            _self.todos.push({label, id: _self.todos.length +1});
+            _self.todos.push({label:label, id: _self.todos.length +1});
         };
 
         this.completeTodo = function ($event) {

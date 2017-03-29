@@ -14,9 +14,6 @@
     TodoFormController.$inject = [];
 
     function TodoFormController() {
-        this.$onInit = function () {
-
-        };
 
         this.submit = function (label) {
             if(!this.label) return;
@@ -26,12 +23,5 @@
             this.label = '';
         };
 
-        this.$postLink = function () {
-
-        };
-
-        this.$onChanges = function (changes) {
-
-        };
     }
 })();
