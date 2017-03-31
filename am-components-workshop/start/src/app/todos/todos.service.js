@@ -12,6 +12,9 @@
         function TodosService() {
 
             this.getTodos = getTodos;
+            this.addTodos = addTodos;
+            this.completeTodos = completeTodos;
+            this.removeTodos = removeTodos;
 
             function getTodos() {
 
@@ -29,6 +32,33 @@
                     complete: false
                 }];
             }
+
+
+            function addTodos(label, todosList) {
+
+                todosList.push({label:label,id:todosList.length + 1});
+                return todosList;
+            }
+
+            function completeTodos(todo, todosList) {
+
+               todosList = todosList.map(function (item) {
+                    return item.id === todo.id ? Object.assign({}, item, {complete: true}) : item
+                });
+                return todosList;
+            }
+
+            function removeTodos(todo, todosList) {
+
+               todosList = todosList.filter(function(item) {
+                    return todo.id !== item.id;
+                });
+                return todosList;
+            }
+
+
+
+
         }
         
 })();

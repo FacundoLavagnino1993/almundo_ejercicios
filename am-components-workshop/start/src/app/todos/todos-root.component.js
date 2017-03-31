@@ -12,33 +12,34 @@
 
     TodosController.$inject = ['TodosService'];
 
+
     function TodosController(TodosService) {
 
         var _self = this;
 
-        //Tomamos los datos seteados en la lista
+
         this.$onInit = function () {
             _self.todos = TodosService.getTodos();
         };
 
         this.addTodo = function ($event) {
             var label = $event.label;
-            _self.todos.push({label:label, id: _self.todos.length +1});
+            _self.todos = TodosService.addTodos(label, _self.todos);
+
         };
+
 
         this.completeTodo = function ($event) {
             var todo = $event.todo;
-            _self.todos = _self.todos.map(function (item) {
-                return item.id === todo.id ? Object.assign({}, item, {complete: true}) : item
-            });
+            _self.todos = TodosService.completeTodos(todo, _self.todos);
+
         };
 
-        //
+
         this.removeTodo = function ($event) {
             var todo = $event.todo;
-            _self.todos = _self.todos.filter(function(item){
-                return todo.id !== item.id;
-            });
-        }
+            _self.todos = TodosService.removeTodos(todo, _self.todos);
+
+        };
     }
 })();
