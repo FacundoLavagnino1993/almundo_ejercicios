@@ -7,7 +7,7 @@ module.exports = function () {
     const pkg = require('./package.json');
 
     const server = './server/';
-    const src = './src/'
+    const src = './client/';
     const scssfolder = `${src }scss/`;
     const mainscss = `${scssfolder }styles.scss`;
     const build = './build/';

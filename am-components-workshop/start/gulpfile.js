@@ -9,7 +9,7 @@ const plugs = gulpLoadPlugins();
 const env = process.env.NODE_ENV || 'local';
 const merge = require('merge-stream');
 const eventStream = require('event-stream');
-const optimize = false;
+var optimize = false;
 
 
 if (env === 'staging' || env === 'production') {

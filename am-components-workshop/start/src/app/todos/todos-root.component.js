@@ -20,25 +20,26 @@
 
         this.$onInit = function () {
             _self.todos = TodosService.getTodos();
+
         };
 
         this.addTodo = function ($event) {
             var label = $event.label;
-            _self.todos = TodosService.addTodos(label, _self.todos);
+            _self.todos = TodosService.addTodos(label);
 
         };
 
 
         this.completeTodo = function ($event) {
-            var todo = $event.todo;
-            _self.todos = TodosService.completeTodos(todo, _self.todos);
+            var id = $event.todo.id;
+            _self.todos = TodosService.completeTodos(id);
 
         };
 
 
         this.removeTodo = function ($event) {
-            var todo = $event.todo;
-            _self.todos = TodosService.removeTodos(todo, _self.todos);
+            var id = $event.todo.id;
+            _self.todos = TodosService.removeTodos(id);
 
         };
     }
