@@ -7,12 +7,12 @@ module.exports = function () {
     const pkg = require('./package.json');
 
     const server = './server/';
-    const src = './client/';
-    const scssfolder = `${src }scss/`;
+    const src = './src/client/';
+    const scssfolder = `${src }/scss/`;
     const mainscss = `${scssfolder }styles.scss`;
     const build = './build/';
-    const appFolder = `${src}app/`;
-    const index = `${src }index.html`;
+    const appFolder = `${src}/app`;
+    const index = `${src }/index.html`;
 
     const config = {
         projectName: pkg.name,
