@@ -1,12 +1,11 @@
 {
-  "name": "am-components-workshop",
+  "name": "almundo-am-components-workshop",
   "version": "1.0.0",
   "description": "Another one...",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "gulp",
-    "start": "node server/"
+    "start": "node src/server/"
   },
   "repository": {
     "type": "git",
@@ -41,6 +40,7 @@
     "body-parser": "^1.17.1",
     "co-router": "^1.0.4",
     "express": "^4.15.2",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "pug": "^2.0.0-beta11"
   }
 }

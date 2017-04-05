@@ -6,8 +6,8 @@
         .module('todos')
         .service('TodosService', TodosService);
 
-        TodosService.$inject = [];
 
+        TodosService.$inject = ['$http'];
 
         function TodosService() {
 
@@ -17,7 +17,7 @@
             this.removeTodos = removeTodos;
 
 
-            var todoList = [{
+           /* var todoList = [{
                label: 'Workshop',
                 id: 0,
                 complete: false,
@@ -29,13 +29,14 @@
                 label: 'watch Football',
                 id: 2,
                 complete: false
-            }];
+            }];*/
 
             function getTodos() {
-                return todoList;
-
+                return $http.get('/todos')
+                    .then(function (response) {
+                        return response.data;
+                    });
             }
-
 
             function addTodos(label) {
 

@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 // API routes
 app.use('/todos', require('./todos/todos-routes'));
-
+app.use('/static', express.static('build'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

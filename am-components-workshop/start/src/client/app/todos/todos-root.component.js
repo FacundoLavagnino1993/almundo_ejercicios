@@ -19,7 +19,12 @@
 
 
         this.$onInit = function () {
-            _self.todos = TodosService.getTodos();
+            //_self.todos = TodosService.getTodos();
+            TodosService.getTodos().then(function done(response){
+                _self.todos = response;
+            }, function fail(error){
+                console.log(error);
+            });
 
         };
 

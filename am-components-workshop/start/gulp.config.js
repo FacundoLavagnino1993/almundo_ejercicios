@@ -7,12 +7,12 @@ module.exports = function () {
     const pkg = require('./package.json');
 
     const server = './server/';
-    const src = './src/client/';
-    const scssfolder = `${src }/scss/`;
+    const src = './src/';
+    const scssfolder = `${src }client/scss/`;
     const mainscss = `${scssfolder }styles.scss`;
     const build = './build/';
-    const appFolder = `${src}/app`;
-    const index = `${src }/index.html`;
+    const appFolder = `${src}client/app/`;
+    const index = `${src }client/index.html`;
 
     const config = {
         projectName: pkg.name,
@@ -24,9 +24,9 @@ module.exports = function () {
         build,
         index,
         src,
-        images: `${src }images/`,
+        images: `${src }client/images/`,
         fonts: `${scssfolder }fonts/`,
-        vendorfolder: `${src }vendor/`,
+        vendorfolder: `${src }client/vendor/`,
         templateCache: {
             file: 'app.templates.js',
             options: {
