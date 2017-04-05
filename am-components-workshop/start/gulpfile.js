@@ -90,7 +90,11 @@ gulp.task('inject', ['bundle'], () => {
     const seriesStreams = series(scriptLib, styleApp, scriptApp);
 
     return gulp.src(`${config.build}index.html`)
-        .pipe(plugs.inject(seriesStreams, {relative: true}))
+        .pipe(plugs.inject(seriesStreams, {
+
+            addPrefix: '/static',
+            relative: true
+        }))
         .pipe(gulp.dest(config.build));
 });
 

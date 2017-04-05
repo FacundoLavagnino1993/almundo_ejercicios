@@ -1,27 +1,20 @@
 
 'use strict';
 
+const TodosService = require('./todos-service');
+
 class TodosController{
 
 
   static getTodos(req, res, next){
 
-      const todos = [{
-          label: 'Workshop',
-          id: 0,
-          complete: false,
-      }, {
-          label: 'Play Football',
-          id: 1,
-          complete: false,
-      }, {
-          label: 'watch Football',
-          id: 2,
-          complete: false
-      }];
+    const todosPromise = TodosService.get();
 
-      res.json(todos);
-}
+        todosPromise.then(function (todos) {
+            res.json(todos);
+        });
+
+  }
 
 }
 
