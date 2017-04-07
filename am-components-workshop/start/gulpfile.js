@@ -91,8 +91,7 @@ gulp.task('inject', ['bundle'], () => {
 
     return gulp.src(`${config.build}index.html`)
         .pipe(plugs.inject(seriesStreams, {
-
-            addPrefix: '/static',
+            addPrefix:'/static',
             relative: true
         }))
         .pipe(gulp.dest(config.build));

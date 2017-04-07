@@ -7,6 +7,9 @@
         .module('todos')
         .component('todosRoot', {
             controller:TodosController,
+            require:{
+
+            },
             templateUrl: "todos/todos-root.html"
         });
 

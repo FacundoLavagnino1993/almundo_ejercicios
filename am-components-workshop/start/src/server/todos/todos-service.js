@@ -1,11 +1,13 @@
-const TodoSchema = require('./todos-model');
+'use strict';
+const TodosModel = require('./todos-model');
 
 class TodosService{
 
     //Get All Todos
     static get(){
-        return TodoSchema.find();
+        return TodosModel.find();
     }
+
 }
 
 module.exports = TodosService;

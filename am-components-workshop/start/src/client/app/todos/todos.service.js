@@ -9,27 +9,13 @@
 
         TodosService.$inject = ['$http'];
 
-        function TodosService() {
+        function TodosService($http) {
 
             this.getTodos = getTodos;
             this.addTodos = addTodos;
             this.completeTodos = completeTodos;
             this.removeTodos = removeTodos;
 
-
-           /* var todoList = [{
-               label: 'Workshop',
-                id: 0,
-                complete: false,
-            }, {
-                label: 'Play Football',
-                id: 1,
-                complete: false,
-            }, {
-                label: 'watch Football',
-                id: 2,
-                complete: false
-            }];*/
 
             function getTodos() {
                 return $http.get('/todos')
