@@ -22,7 +22,7 @@
 
 
         this.$onInit = function () {
-            //_self.todos = TodosService.getTodos();
+
             TodosService.getTodos().then(function done(response){
                 _self.todos = response;
             }, function fail(error){
@@ -32,22 +32,38 @@
         };
 
         this.addTodo = function ($event) {
-            var label = $event.label;
-            _self.todos = TodosService.addTodos(label);
+
+            TodosService.addTodos($event)
+                .then(function done(response){
+                _self.todos = response;
+            }, function fail(error){
+                console.log(error);
+            });
 
         };
 
 
         this.completeTodo = function ($event) {
-            var id = $event.todo.id;
-            _self.todos = TodosService.completeTodos(id);
+
+            TodosService.completeTodos($event.todo)
+                .then(function done(response){
+                    _self.todos = response;
+                }, function fail(error) {
+                    console.log(error.data);
+                });
 
         };
 
 
         this.removeTodo = function ($event) {
-            var id = $event.todo.id;
-            _self.todos = TodosService.removeTodos(id);
+
+            TodosService.removeTodos($event.todo)
+                .then(function done(response){
+                    _self.todos = response;
+                }, function fail(error){
+                    console.log(error);
+                });
+
 
         };
     }

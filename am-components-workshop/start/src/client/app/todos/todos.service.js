@@ -25,25 +25,30 @@
             }
 
             function addTodos(label) {
+                return $http.post('/todos',label)
+                    .then(function (res){
+                        console.log(label);
+                        return res.data;
+                    });
 
-                todoList.push({label:label,id:todoList.length + 1});
-                return todoList;
             }
 
-            function completeTodos(id) {
+            function completeTodos(label) {
 
-               todoList = todoList.map(function (item) {
-                    return item.id === id ? Object.assign({}, item, {complete: true}) : item
-                });
-                return todoList;
+                return $http.put('/todos',label)
+                    .then(function (res){
+                        return res.data;
+                    });
+
+
             }
 
-            function removeTodos(id) {
+            function removeTodos(label) {
 
-               todoList = todoList.filter(function(item) {
-                    return id !== item.id;
-                });
-                return todoList;
+                return $http.delete('/todos',label)
+                    .then(function (res){
+                        return res.data;
+                    });
             }
 
 

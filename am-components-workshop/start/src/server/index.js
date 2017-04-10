@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 //Connect to database
-mongoose.connect("mongodb://localhost/test");
+mongoose.connect("mongodb://localhost");
 //Get the default connection
 const db = mongoose.connection;
 
